@@ -1,7 +1,9 @@
 <?
 require_once('inc/functions.php');
-$conn=GetConnection();
-$conn->host_info;
+$conn = GetConnection();
+$response =$conn->query("SELECT * from 2012Grad_Users");
+
+print_r($rs);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,7 +30,11 @@ $conn->host_info;
 			</nav>
 
 			<div>
-<?=$conn->host_info?>
+<ul>
+	<?while($rs = $response->fetch_assoc());  ?>
+	<li><?=$rs['FirstName']?><?=$rs['LastName']?></li>
+	<?endwhile; ?>
+</ul>
 			</div>
 
 			<footer>
