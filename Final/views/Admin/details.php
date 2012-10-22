@@ -13,26 +13,18 @@ $row = Admin::Get($_REQUEST['id']);
 
 			<div id="content" class="dl-horizontal">
 				<dl>
-					<dt>First Name:</dt>
+					<dt>User Name:</dt>
 					<dd><?=$row['FirstName']?></dd>
 				</dl>
 				<dl>
-					<dt>First Name:</dt>
+					<dt>Password:</dt>
 					<dd><?=$row['LastName']?></dd>
 				</dl>
 				<dl>
-					<dt>First Name:</dt>
-					<dd><?=$row['created_at']?></dd>
+					<dt>Last_log:</dt>
+					<dd><?=$row['Last_log']?></dd>
 				</dl>
-				<dl>
-					<dt>First Name:</dt>
-					<dd><?=$row['updated_at']?></dd>
-				</dl>
-				<dl>
-					<dt>Keyword_id:</dt>
-					<dd><?=$row['Keyword_id']?></dd>
-				</dl>
-							
+				
 			
 			</div>
 			<? include('../../inc/footer.php'); ?>

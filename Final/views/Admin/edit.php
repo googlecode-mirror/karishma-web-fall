@@ -53,7 +53,7 @@ if(isset($_POST['id']))
 					<div class="control-group">
 						<label class="control-label">Last_log:</label>
 						<div class="controls">
-							<input type="text" name="Last_log:" value="<?=$row['Last_log:']?>" />
+							<input type="text" name="Last_log:" value="<?=$row['Last_log']?>" />
 						</div>
 					</div>
 					
