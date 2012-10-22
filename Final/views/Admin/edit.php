@@ -39,35 +39,24 @@ if(isset($_POST['id']))
 					<div class="control-group">
 						<label class="control-label" for="FirstName">First Name:</label>
 						<div class="controls">
-							<input type="text" name="FirstName" id="FirstName" value="<?=$row['FirstName']?>" />
+							<input type="text" name="Username" id="Username" value="<?=$row['Username']?>" />
 						</div>
 					</div>
 					
 					<div class="control-group">
-						<label class="control-label">Last Name:</label>
+						<label class="control-label">Password:</label>
 						<div class="controls">
-							<input type="text" name="LastName" value="<?=$row['LastName']?>" />
+							<input type="text" name="Password" value="<?=$row['Password']?>" />
 						</div>
 					</div>
 				
 					<div class="control-group">
-						<label class="control-label">created_at:</label>
+						<label class="control-label">Last_log:</label>
 						<div class="controls">
-							<input type="text" name="created_at" value="<?=$row['created_at']?>" />
+							<input type="text" name="Last_log:" value="<?=$row['Last_log:']?>" />
 						</div>
 					</div>
-					<div class="control-group">
-						<label class="control-label">updated_at:</label>
-						<div class="controls">
-							<input type="text" name="updated_at" value="<?=$row['updated_at']?>" />
-						</div>
-					</div>
-					<div class="control-group">
-						<label class="control-label">Keyword_id:</label>
-						<div class="controls">
-							<input type="text" name="Keyword_id" value="<?=$row['Keyword_id']?>" />
-						</div>
-					</div>
+					
 					
 					<div class="control-group">
 						<div class="controls">
