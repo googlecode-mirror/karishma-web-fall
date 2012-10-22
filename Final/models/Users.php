@@ -26,7 +26,7 @@ class Users
 	{
 		$conn = GetConnection();
 		$sql = 	"UPDATE Users "
-			.	"Set FirstName='$row[FirstName]',LastName='$row[LastName]',created_at='$row[created_at]',updated_at='$row[updated_at]',Keyword_id='$row[Keyword_id]' "
+			.	"Set UserId='$row[UserId]',FirstName='$row[FirstName]',LastName='$row[LastName]',Email='$row[Email]',OrderId=$row[OrderId]', "
 			.	"WHERE id=$row[id] ";
 		//echo $sql;
 		$conn->query($sql);
