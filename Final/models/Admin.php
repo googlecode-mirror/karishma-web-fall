@@ -26,7 +26,7 @@ class Admin
 	{
 		$conn = GetConnection();
 		$sql = 	"UPDATE Admin "
-			.	"Set Username='$row[Username]',Password='$row[Password]',created_at='$row[created_at]',updated_at='$row[updated_at]',Keyword_id='$row[Keyword_id]' "
+			.	"Set Username='$row[Username]',Password='$row[Password]',Last_log='$row[Last_log]' "
 			.	"WHERE id=$row[id] ";
 		//echo $sql;
 		$conn->query($sql);
