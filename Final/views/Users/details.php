@@ -13,24 +13,24 @@ $row = Users::Get($_REQUEST['id']);
 
 			<div id="content" class="dl-horizontal">
 				<dl>
+					<dt>User Id:</dt>
+					<dd><?=$row['UserId']?></dd>
+				</dl>
+				<dl>
 					<dt>First Name:</dt>
 					<dd><?=$row['FirstName']?></dd>
 				</dl>
 				<dl>
-					<dt>First Name:</dt>
+					<dt>Last Name:</dt>
 					<dd><?=$row['LastName']?></dd>
 				</dl>
 				<dl>
-					<dt>First Name:</dt>
-					<dd><?=$row['created_at']?></dd>
+					<dt>Email:</dt>
+					<dd><?=$row['Email']?></dd>
 				</dl>
 				<dl>
-					<dt>First Name:</dt>
-					<dd><?=$row['updated_at']?></dd>
-				</dl>
-				<dl>
-					<dt>Keyword_id:</dt>
-					<dd><?=$row['Keyword_id']?></dd>
+					<dt>OrderId:</dt>
+					<dd><?=$row['OrderId']?></dd>
 				</dl>
 							
 			
