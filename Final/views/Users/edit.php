@@ -37,6 +37,12 @@ if(isset($_POST['id']))
 				<form class="form-horizontal" action="" method="post">
 					<input type="hidden" name="id" value="<?=$row['id']?>" />
 					<div class="control-group">
+						<label class="control-label">UserId:</label>
+						<div class="controls">
+							<input type="text" name="Keyword_id" value="<?=$row['UserId:']?>" />
+						</div>
+					</div>
+					<div class="control-group">
 						<label class="control-label" for="FirstName">First Name:</label>
 						<div class="controls">
 							<input type="text" name="FirstName" id="FirstName" value="<?=$row['FirstName']?>" />
@@ -51,23 +57,18 @@ if(isset($_POST['id']))
 					</div>
 				
 					<div class="control-group">
-						<label class="control-label">created_at:</label>
+						<label class="control-label">Email:</label>
 						<div class="controls">
-							<input type="text" name="created_at" value="<?=$row['created_at']?>" />
+							<input type="text" name="mail" value="<?=$row['Email']?>" />
 						</div>
 					</div>
 					<div class="control-group">
-						<label class="control-label">updated_at:</label>
+						<label class="control-label">Order Id</label>
 						<div class="controls">
-							<input type="text" name="updated_at" value="<?=$row['updated_at']?>" />
+							<input type="text" name="OrderId" value="<?=$row['OrderId']?>" />
 						</div>
 					</div>
-					<div class="control-group">
-						<label class="control-label">Keyword_id:</label>
-						<div class="controls">
-							<input type="text" name="Keyword_id" value="<?=$row['Keyword_id']?>" />
-						</div>
-					</div>
+					
 					
 					<div class="control-group">
 						<div class="controls">
