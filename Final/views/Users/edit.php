@@ -4,6 +4,8 @@ require_once ('../../models/Users.php');
 if(isset($_POST['id']))
 {
 	$row = $_POST;
+	$response = Users::Validate($row);
+	if($response === true)
 	$response = Users::Update($row);
 	if($response === true)
 		header("Location: index.php");
