@@ -1,6 +1,6 @@
 <?
-require_once ('../../models/Supplier.php');
-$results = Supplier::GetAll();
+require_once ('../../models/Suppliers.php');
+$results = Suppliers::GetAll();
 ?>
 
 
@@ -14,7 +14,7 @@ $results = Supplier::GetAll();
 			<div id="content">
 				<table class="table table-bordered table-condensed table-hover table-striped">
 					<tr>
-						<th>First Name</th><th>Last Name</th><th>Actions</th>
+						<th>Supplier Id</th><th>Company Name</th><th>Actions</th>
 					</tr>
 					
 					<? while($row = $results->fetch_assoc()): ?>
