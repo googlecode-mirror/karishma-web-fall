@@ -1,14 +1,14 @@
 <?
-require_once ('../../models/Supplier.php');
+require_once ('../../models/Suppliers.php');
 
 if(isset($_POST['id']))
 {
 	$row = $_POST;
-	$response = Supplier::Update($row);
+	$response = Suppliers::Update($row);
 	if($response === true)
 		header("Location: index.php");
 }else{
-	$row = Supplier::Get($_REQUEST['id']);
+	$row = Suppliers::Get($_REQUEST['id']);
 }
 
 

@@ -61,7 +61,7 @@ if(isset($_POST['id']))
 					<div class="control-group">
 						<label class="control-label">Email:</label>
 						<div class="controls">
-							<input type="text" name="mail" value="<?=$row['Email']?>" />
+							<input type="text" name="Email" value="<?=$row['Email']?>" />
 						</div>
 					</div>
 					<div class="control-group">
