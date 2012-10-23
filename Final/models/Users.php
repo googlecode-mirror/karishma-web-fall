@@ -26,7 +26,7 @@ class Users
         {
                 $conn = GetConnection();
                 $row2 = EscapeRow($row, $conn);
-                $sql =  "UPDATE 2012Grad_Users "
+                $sql =  "UPDATE Users"
                         .       "Set UserId='$row2[UserId]',FirstName='$row2[FirstName]',LastName='$row2[LastName]',Email='$row2[Email]',OrderId='$row2[OrderId]' "
                         .       "WHERE id=$row2[id] ";
                 echo $sql;
