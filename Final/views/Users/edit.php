@@ -53,11 +53,11 @@ if(isset($_POST['id']))
                                                 </div>
                                         <? } ?>
                                         <?
+                                                RenderInput('UserId', 'number');
                                                 RenderInput('FirstName', 'text');
                                                 RenderInput('LastName', 'text');
-                                                RenderInput('created_at', 'datetime');
-                                                RenderInput('updated_at', 'datetime');
-                                                RenderInput('Keyword_id', 'number');
+                                                RenderInput('Email', 'text');
+                                                RenderInput('OrderId', 'number');
                                         ?>
                                         
                                         <div class="control-group">
