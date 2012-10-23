@@ -28,7 +28,7 @@ class Users
 		$sql = 	"UPDATE Users "
 			.	"Set UserId='$row[UserId]',FirstName='$row[FirstName]',LastName='$row[LastName]',Email='$row[Email]',OrderId=$row[OrderId]', "
 			.	"WHERE id=$row[id] ";
-		//echo $sql;
+		echo $sql;
 		$conn->query($sql);
 		$error = $conn->error;
 		$conn->close();
