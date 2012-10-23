@@ -14,7 +14,7 @@ $results = Orders::GetAll();
 			<div id="content">
 				<table class="table table-bordered table-condensed table-hover table-striped">
 					<tr>
-						<th>First Name</th><th>Last Name</th><th>Actions</th>
+						<th>Order Id</th><th>Product Id</th><th>Actions</th>
 					</tr>
 					
 					<? while($row = $results->fetch_assoc()): ?>

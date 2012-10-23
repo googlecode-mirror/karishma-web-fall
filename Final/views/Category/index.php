@@ -1,6 +1,6 @@
 <?
-require_once ('../../models/Admin.php');
-$results = Admin::GetAll();
+require_once ('../../models/Category.php');
+$results = Category::GetAll();
 ?>
 
 
