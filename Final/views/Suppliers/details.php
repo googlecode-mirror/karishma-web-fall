@@ -1,6 +1,6 @@
 <?
-require_once ('../../models/Supplier.php');
-$row = Supplier::Get($_REQUEST['id']);
+require_once ('../../models/Suppliers.php');
+$row = Suppliers::Get($_REQUEST['id']);
 ?>
 
 
