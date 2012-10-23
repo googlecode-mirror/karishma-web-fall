@@ -14,12 +14,12 @@ $results = Admin::GetAll();
 			<div id="content">
 				<table class="table table-bordered table-condensed table-hover table-striped">
 					<tr>
-						<th>First Name</th><th>Last Name</th><th>Actions</th>
+						<th>Category Id</th><th>Category Name</th><th>Actions</th>
 					</tr>
 					
 					<? while($row = $results->fetch_assoc()): ?>
 						<tr>
-							<td><?=$row['FirstName']?></td> <td><?=$row['LastName']?> </td>
+							<td><?=$row['CategoryId']?></td> <td><?=$row['CategoryName']?> </td>
 							<td>
 								<a href="details.php?id=<?=$row['id']?>">Details</a>
 								<a href="edit.php?id=<?=$row['id']?>">Edit</a>
