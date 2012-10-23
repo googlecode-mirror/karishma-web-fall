@@ -19,7 +19,7 @@ $results = Supplier::GetAll();
 					
 					<? while($row = $results->fetch_assoc()): ?>
 						<tr>
-							<td><?=$row['FirstName']?></td> <td><?=$row['LastName']?> </td>
+							<td><?=$row['SupplierId']?></td> <td><?=$row['CompanyName']?> </td>
 							<td>
 								<a href="details.php?id=<?=$row['id']?>">Details</a>
 								<a href="edit.php?id=<?=$row['id']?>">Edit</a>
