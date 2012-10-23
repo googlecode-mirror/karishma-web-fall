@@ -1,6 +1,16 @@
 <?
 require_once ('../../models/Users.php');
-$results = Users::GetAll();
+//$results = Users::GetAll();
+
+if(isset($_REQUEST['id']))
+{
+$response = Users::Delete($_REQUEST['id']);
+
+	if($response === true)
+		header("Location: index.php");
+}
+
+
 ?>
 
 
@@ -13,7 +23,7 @@ $results = Users::GetAll();
 
 			<div id="content">
 
-
+Deleting the Record
 
 				
 			</div>

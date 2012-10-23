@@ -6,12 +6,31 @@ $results = Users::GetAll();
 
 <!DOCTYPE html>
 <html lang="en">
+	
 	<? include('../../inc/head.php'); ?>
+	<head>
+		<script>
+			function fundel(t)
+{
+
+var r=confirm("do u want to delete this?");
+if (r==true)
+  {
+  window.location="delete.php?id=" +t;
+  }
+else
+  {
+return false;  }
+}
+		</script>
+	</head>
 	<body>
 		<div>
 			<? include('../../inc/nav.php'); ?>
-
+			
 			<div id="content">
+				<a href="create.php"  class="LinkButton">Create</a>
+				
 				<table class="table table-bordered table-condensed table-hover table-striped">
 					<tr>
 						<th>First Name</th><th>Last Name</th><th>Actions</th>
@@ -21,9 +40,9 @@ $results = Users::GetAll();
 						<tr>
 							<td><?=$row['FirstName']?></td> <td><?=$row['LastName']?> </td>
 							<td>
-								<a href="details.php?id=<?=$row['id']?>">Details</a>
-								<a href="edit.php?id=<?=$row['id']?>">Edit</a>
-								<a href="delete.php?id=<?=$row['id']?>">Delete</a>
+								<a href="details.php?id=<?=$row['user_id']?>">Details</a>
+								<a href="edit.php?id=<?=$row['user_id']?>">Edit</a>
+								<a href="javascript:"  onClick="fundel('<?php echo $row['user_id']; ?>')">Delete</a>
 							</td>					
 						</tr>
 					<? endwhile; ?>
