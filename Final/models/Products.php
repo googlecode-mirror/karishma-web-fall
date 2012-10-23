@@ -1,5 +1,5 @@
 <?php
-require_once ('/home/n02701310/WWW/Final/inc/functions.php');
+require_once ('/home/n02701310/WWW/Final/Final/inc/functions.php');
 
 class Products
 {
