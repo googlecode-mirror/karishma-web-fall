@@ -1,5 +1,6 @@
 <?
 require_once ('../../models/Users.php');
+
 $row = Users::Get($_REQUEST['id']);
 ?>
 
@@ -13,26 +14,22 @@ $row = Users::Get($_REQUEST['id']);
 
 			<div id="content" class="dl-horizontal">
 				<dl>
-					<dt>User Id:</dt>
-					<dd><?=$row['UserId']?></dd>
-				</dl>
-				<dl>
 					<dt>First Name:</dt>
 					<dd><?=$row['FirstName']?></dd>
 				</dl>
 				<dl>
-					<dt>Last Name:</dt>
+					<dt>last Name:</dt>
 					<dd><?=$row['LastName']?></dd>
 				</dl>
 				<dl>
-					<dt>Email:</dt>
-					<dd><?=$row['Email']?></dd>
+					<dt>Reg Date:</dt>
+					<dd><?=$row['user_regdate']?></dd>
 				</dl>
 				<dl>
-					<dt>OrderId:</dt>
-					<dd><?=$row['OrderId']?></dd>
-				</dl>
-							
+					<dt>last Login:</dt>
+					<dd><?=$row['user_last_login']?></dd>
+				</dl >
+					
 			
 			</div>
 			<? include('../../inc/footer.php'); ?>
