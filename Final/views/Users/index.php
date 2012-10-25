@@ -12,7 +12,7 @@ $results = Users::GetAll();
                         <? include('../../inc/nav.php'); ?>
 
                         <div id="content">
-                        	<p>hi</p>
+                        
                         	<a href="edit.php">+Create New</a>
                                 <table class="table table-bordered table-condensed table-hover table-striped">
                                         <tr>
