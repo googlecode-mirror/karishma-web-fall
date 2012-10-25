@@ -17,7 +17,6 @@ class Users
                 $conn->close();
                 return $row;
         }
-
         static function Insert()
         {
         }
