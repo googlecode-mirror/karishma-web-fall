@@ -44,8 +44,8 @@ class Users
         static function Validate($row)
         {
                 $results = array();
-                if(!is_numeric($row['Keyword_id'])) $results['Keyword_id'] = 'Keyword id needs to be a number';
-                if(empty($row['Keyword_id'])) $results['Keyword_id'] = 'Keyword is required';
+                if(!is_numeric($row['UserId'])) $results['UserId'] = 'Keyword id needs to be a number';
+                if(empty($row['UserId'])) $results['UserId'] = 'Keyword is required';
                 if(empty($row['FirstName'])) $results['FirstName'] = 'FirstName is required';
                 if(empty($row['LastName'])) $results['LastName'] = 'LastName is required';
                 
