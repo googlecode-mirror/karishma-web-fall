@@ -1,6 +1,6 @@
 <?
 require_once ('../../models/Users.php');
-$row = Users::Get($_REQUEST['id']);
+$row = Users::Get($_REQUEST['UserId']);
 ?>
 
 
@@ -22,15 +22,15 @@ $row = Users::Get($_REQUEST['id']);
                                 </dl>
                                 <dl>
                                         <dt>First Name:</dt>
-                                        <dd><?=$row['created_at']?></dd>
+                                        <dd><?=$row['UserId']?></dd>
                                 </dl>
                                 <dl>
                                         <dt>First Name:</dt>
-                                        <dd><?=$row['updated_at']?></dd>
+                                        <dd><?=$row['OrderId']?></dd>
                                 </dl>
                                 <dl>
                                         <dt>Keyword_id:</dt>
-                                        <dd><?=$row['Keyword_id']?></dd>
+                                        <dd><?=$row['Email']?></dd>
                                 </dl>
                                                         
                         

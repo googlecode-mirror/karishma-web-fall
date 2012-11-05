@@ -1,15 +1,15 @@
 <?
 require_once ('../../models/Users.php');
-if(isset($_POST['id']))
+if(isset($_POST['UserId']))
 {
-        $response = Users::Delete($_POST['id']);
+        $response = Users::Delete($_POST['UserId']);
         if($response === true)
         {
                 header("Location: index.php");
                 die();
         }
 }
-        $row = Users::Get($_REQUEST['id']);
+        $row = Users::Get($_REQUEST['UserId']);
 ?>
 
 
@@ -35,7 +35,7 @@ if(isset($_POST['id']))
                                         <p>
                                                 Would you like to delete <?=$row['FirstName']?> <?=$row['LastName']?>?
                                         </p>
-                                        <input type="hidden" name="id" value="<?=$row['id']?>" />
+                                        <input type="hidden" name="id" value="<?=$row['UserId']?>" />
                                     <div class="modal-footer">
                                                 <input type="submit" value="Delete" class="btn btn-primary" />
                                         </div>

@@ -1,7 +1,7 @@
 <?
 require_once ('../../models/Users.php');
 
-if(isset($_POST['id']))
+if(isset($_POST['UserId']))
 {
         $row = $_POST;
         $response = Users::Validate($row);
@@ -10,7 +10,7 @@ if(isset($_POST['id']))
         if($response === true)
                 header("Location: index.php");
 }else{
-        $row = Users::Get($_REQUEST['id']);
+        $row = Users::Get($_REQUEST['UserId']);
 }
 
 
@@ -37,7 +37,7 @@ if(isset($_POST['id']))
                                         </dl>
                                 <? endif; ?>
                                 <form class="form-horizontal" action="" method="post">
-                                        <input type="hidden" name="id" value="<?=$row['id']?>" />
+                                        <input type="hidden" name="id" value="<?=$row['UserId']?>" />
                                         <? function RenderInput($propertyName, $inputtype){ ?>
                                                 <? global $row, $response; ?>
                                                 <div class="control-group">
