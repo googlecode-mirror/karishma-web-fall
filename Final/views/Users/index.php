@@ -19,7 +19,7 @@ $results = Users::GetAll();
                                     </div>
                                 <? endif; ?>
 
-                        	<a href="edit.php">+Create New</a>
+                        	<a href="edit.php">+</a>
                                 <table class="table table-bordered table-condensed table-hover table-striped">
                                         <tr  >
                                                 <th>First Name</th><th>Last Name</th><th>Actions</th>
