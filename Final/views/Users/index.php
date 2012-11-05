@@ -19,7 +19,7 @@ $results = Users::GetAll();
                                     </div>
                                 <? endif; ?>
 
-                        	<a href="edit.php">+</a>
+                        	<a href="edit.php">+Create New</a>
                                 <table class="table table-bordered table-condensed table-hover table-striped">
                                         <tr  >
                                                 <th>First Name</th><th>Last Name</th><th>Actions</th>
@@ -41,32 +41,7 @@ $results = Users::GetAll();
                         </div>
                         <? include('../../inc/footer.php'); ?>
                 </div>
-       <div id="delete-box" class="modal hide fade">
-                            <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                    <h3>Delete</h3>
-                            </div>
-                            <div class="modal-body">
-                                    
-                            </div>
-                    </div>
-                    <script type="text/javascript" src="../../static/js/bootstrap.js"></script>
-                <script type="text/javascript">
-                        $(function(){
-                                $(".close").click(function(){
-                                        $(this).closest(".alert").slideUp();
-                                });
-                                $(".error").removeClass('error', 'slow');
-                                $(".delete-link").click(function(){
-                                        $("#delete-box").modal({'show':true });
-                                        $.get(this.href, function(data){
-                                                $("#delete-box").find(".modal-body").html($(data).find("form"));
-                                        });
-                                        return false;
-                                });
-                        });
-                </script>
-         
+                
                 
                 
                 
