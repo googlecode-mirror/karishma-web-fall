@@ -1,5 +1,5 @@
 <?php
-require_once ('/home/n02701310/WWW/Final/Final/Final/inc/functions.php');
+require_once ('/home/n02701310/WWW/Final/Final/inc/functions.php');
 
 class Users
 {
@@ -26,7 +26,7 @@ class Users
                 $conn = GetConnection();
                 $row2 = EscapeRow($row, $conn);
                 $sql =  "UPDATE Users"
-                        .       "Set UserId='$row2[UserId]',FirstName='$row2[FirstName]',LastName='$row2[LastName]',Email='$row2[Email]',OrderId='$row2[OrderId]' "
+                        .       "Set id='$row2[id]',FirstName='$row2[FirstName]',LastName='$row2[LastName]',Email='$row2[Email]',OrderId='$row2[OrderId]' "
                         .       "WHERE id=$row2[id] ";
                 echo $sql;
                 $conn->query($sql);
@@ -43,8 +43,8 @@ class Users
         static function Validate($row)
         {
                 $results = array();
-                if(!is_numeric($row['UserId'])) $results['UserId'] = 'Keyword id needs to be a number';
-                if(empty($row['UserId'])) $results['UserId'] = 'Keyword is required';
+                if(!is_numeric($row['id'])) $results['id'] = 'Keyword id needs to be a number';
+                if(empty($row['id'])) $results['id'] = 'Keyword is required';
                 if(empty($row['FirstName'])) $results['FirstName'] = 'FirstName is required';
                 if(empty($row['LastName'])) $results['LastName'] = 'LastName is required';
                 

@@ -26,12 +26,12 @@ $results = Users::GetAll();
                                         </tr>
                                         
                                         <? while($row = $results->fetch_assoc()): ?>
-                                                <tr class="<?= isset($_GET['inserted']) && $row['UserId'] == $_GET['inserted'] ? 'error' : '' ?>">
+                                                <tr class="<?= isset($_GET['inserted']) && $row['id'] == $_GET['inserted'] ? 'error' : '' ?>">
                                                         <td><?=$row['FirstName']?></td> <td><?=$row['LastName']?> </td>
                                                         <td>
-                                                                <a href="details.php?id=<?=$row['UserId']?>">Details</a>
-                                                                <a href="edit.php?id=<?=$row['UserId']?>">Edit</a>
-                                                                <a href="delete.php?id=<?=$row['UserId']?>">Delete</a>
+                                                                <a href="details.php?id=<?=$row['id']?>">Details</a>
+                                                                <a href="edit.php?id=<?=$row['id']?>">Edit</a>
+                                                                <a href="delete.php?id=<?=$row['id']?>">Delete</a>
                                                         </td>                                   
                                                 </tr>
                                         <? endwhile; ?>
