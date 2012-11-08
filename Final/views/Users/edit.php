@@ -57,7 +57,7 @@ if(isset($_POST['id']))
                                                 RenderInput('FirstName', 'text');
                                                 RenderInput('LastName', 'text');
                                                 RenderInput('Email', 'text');
-                                                RenderInput('OrderId', 'number');
+                                                RenderInput('Keyword_id', 'number');
                                         ?>
                                         
                                         <div class="control-group">
