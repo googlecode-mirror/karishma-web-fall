@@ -56,7 +56,8 @@ if(isset($_POST['id']))
                                                 RenderInput('id', 'number');
                                                 RenderInput('FirstName', 'text');
                                                 RenderInput('LastName', 'text');
-                                                RenderInput('Email', 'text');
+                                                RenderInput('created_at', 'text');
+												RenderInput('updated_at', 'text');
                                                 RenderInput('Keyword_id', 'number');
                                         ?>
                                         

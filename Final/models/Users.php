@@ -1,111 +1,55 @@
-<?
-require_once ('../../models/Users.php');
+<?php
+require_once ('/home/n02701310/WWW/Final/Final/inc/functions.php');
 
-if(isset($_POST['id']))
+class Users
 {
-        $row = $_POST;
-        $response = Users::Validate($row);
-        if($response === true)  
-                $response = Users::Update($row);
-        if($response === true)
-                header("Location: index.php");
-}else{
-        $row = Users::Get($_REQUEST['id']);
+        static function GetAll()
+        {
+                $conn = GetConnection();
+                return $conn->query('SELECT * FROM Users');
+        }
+       
+        static function Get($id)
+        {
+                $conn = GetConnection();
+                $results = $conn->query("SELECT * FROM Users WHERE id=$id");
+                $row = $results->fetch_assoc();
+                $conn->close();
+                return $row;
+        }
+
+        static function Insert()
+        {
+        }
+       
+        static function Update($row)
+        {
+                $conn = GetConnection();
+                $row2 = EscapeRow($row, $conn);
+                $sql =  "UPDATE Users "
+                        .       "Set FirstName='$row2[FirstName]',LastName='$row2[LastName]',created_at='$row2[created_at]',updated_at='$row2[updated_at]',Keyword_id='$row2[Keyword_id]' "
+                        .       "WHERE id=$row2[id] ";
+                echo $sql;
+                $conn->query($sql);
+                $error = $conn->error;
+                $conn->close();
+               
+                return $error != '' ? array('Server Error' => $error) : true;          
+        }
+       
+        static function Delete()
+        {
+        }
+       
+        static function Validate($row)
+        {
+                $results = array();
+                if(!is_numeric($row['Keyword_id'])) $results['Keyword_id'] = 'Keyword id needs to be a number';
+                if(empty($row['Keyword_id'])) $results['Keyword_id'] = 'Keyword is required';
+                if(empty($row['FirstName'])) $results['FirstName'] = 'FirstName is required';
+                if(empty($row['LastName'])) $results['LastName'] = 'LastName is required';
+               
+                return count($results) > 0 ? $results : true;
+        }
 }
-
-
-
-
-?>
-
-
-<!DOCTYPE html>
-<html lang="en">
-        <? include('../../inc/head.php'); ?>
-        <body>
-                <div>
-                        <? include('../../inc/nav.php'); ?>
-
-                        <div id="content">
-                                
-                                <? if(isset($response)): ?>
-                                        <dl class="dl-horizontal error">
-                                                <? foreach ($response as $key => $value) { ?>
-                                                        <dt><?=$key?></dt>
-                                                        <dd><?=$value?></dd>
-                                                <? } ?>                                         
-                                        </dl>
-                                <? endif; ?>
-                                <form class="form-horizontal" action="" method="post">
-                                        <input type="hidden" name="id" value="<?=$row['id']?>" />
-                                        <div class="control-group">
-                                                <label class="control-label" for="FirstName">First Name:</label>
-                                                <div class="controls">
-                                                        <input  type="text" name="FirstName" id="FirstName" value="<?=$row['FirstName']?>"
-                                                                        class="<?=isset($response['FirstName']) ? 'error' : '' ?>"
-                                                        />
-                                                        <? if(isset($response['FirstName'])): ?>
-                                                                <span class="error"><?=$response['FirstName']?></span>
-                                                        <? endif; ?>
-                                                </div>
-                                        </div>
-                                        
-                                        <div class="control-group">
-                                                <label class="control-label">Last Name:</label>
-                                                <div class="controls">
-                                                        <input type="text" name="LastName" value="<?=$row['LastName']?>" class="required" />
-                                                </div>
-                                        </div>
-                                
-                                        <div class="control-group">
-                                                <label class="control-label">created_at:</label>
-                                                <div class="controls">
-                                                        <input type="text" name="created_at" value="<?=$row['created_at']?>" />
-                                                </div>
-                                        </div>
-                                        <div class="control-group">
-                                                <label class="control-label">updated_at:</label>
-                                                <div class="controls">
-                                                        <input type="text" name="updated_at" value="<?=$row['updated_at']?>" />
-                                                </div>
-                                        </div>
-                                        <div class="control-group">
-                                                <label class="control-label">Keyword_id:</label>
-                                                <div class="controls">
-                                                        <input type="text" name="Keyword_id" value="<?=$row['Keyword_id']?>"
-                                                        class="<?=isset($response['Keyword_id']) ? 'error' : '' ?>" />
-                                                        <? if(isset($response['Keyword_id'])): ?>
-                                                                <span class="error"><?=$response['Keyword_id']?></span>
-                                                        <? endif; ?>
-                                                </div>
-                                        </div>
-                                        
-                                        <div class="control-group">
-                                                <div class="controls">
-                                                        <input type="submit" value="Save" class="btn btn-primary" />
-                                                </div>
-                                        </div>
-                        
-                                </form>
-
-                        </div>
-                        <? include('../../inc/footer.php'); ?>
-                </div>
-                <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/jquery.validate.min.js"></script>
-                <script type="text/javascript">
-                        $(function(){
-                                
-                                $("form").validate(
-                                        {
-                                                rules: { created_at: { required: true} }
-                                        }
-                                );
-                                
-                                $("dl").hide();
-                                $("dl").slideDown("slow");
-                                
-                        });
-                </script>
-        </body>
-</html>
 

@@ -22,20 +22,21 @@ $row = Users::Get($_REQUEST['id']);
                                 </dl>
                                 <dl>
                                         <dt>First Name:</dt>
-                                        <dd><?=$row['id']?></dd>
+                                        <dd><?=$row['created_at']?></dd>
                                 </dl>
                                 <dl>
                                         <dt>First Name:</dt>
-                                        <dd><?=$row['OrderId']?></dd>
+                                        <dd><?=$row['updated_at']?></dd>
                                 </dl>
                                 <dl>
                                         <dt>Keyword_id:</dt>
-                                        <dd><?=$row['Email']?></dd>
+                                        <dd><?=$row['Keyword_id']?></dd>
                                 </dl>
-                                                        
-                        
+                                                       
+                       
                         </div>
                         <? include('../../inc/footer.php'); ?>
                 </div>
         </body>
 </html>
+
